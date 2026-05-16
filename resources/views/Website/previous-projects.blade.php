@@ -1,14 +1,14 @@
 <x-website.layout>
 
     <!-- start banner -->
-    @include('Website.partials._breadcrumb', ['page_title' => __('website.our_projects')])
+    @include('Website.partials._breadcrumb', ['page_title' => __('website.previous_projects')])
     <!-- end banner -->
 
-    @if ($projects->isNotEmpty())
+    @if ($previous_projects->isNotEmpty())
     <section class="project-section-inner pt-130 pb-130">
         <div class="container container-2">
             <div class="row gy-5">
-                @foreach ($projects as $project)
+                @foreach ($previous_projects as $project)
                 <div class="col-lg-4 col-md-6">
                     <div class="project-item antra-hover-view">
                         <div class="project-img">

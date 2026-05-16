@@ -15,18 +15,18 @@ class SectionSeeder extends Seeder
     {
         $data = [
 
-            [
-                'key' => SectionType::SERVICES,
-                'title_en' => 'Our Services',
-                'title_ar' => 'خدماتنا',
-                'second_title_en' => 'Our Services',
-                'second_title_ar' => 'خدماتنا',
-                'short_desc_en' => 'Our Services',
-                'short_desc_ar' => 'خدماتنا',
-                'long_desc_en' => 'Our Services',
-                'long_desc_ar' => 'خدماتنا',
-                'status' => 1,
-            ],
+            // [
+            //     'key' => SectionType::SERVICES,
+            //     'title_en' => 'Our Services',
+            //     'title_ar' => 'خدماتنا',
+            //     'second_title_en' => 'Our Services',
+            //     'second_title_ar' => 'خدماتنا',
+            //     'short_desc_en' => 'Our Services',
+            //     'short_desc_ar' => 'خدماتنا',
+            //     'long_desc_en' => 'Our Services',
+            //     'long_desc_ar' => 'خدماتنا',
+            //     'status' => 1,
+            // ],
             [
                 'key' => SectionType::PROJECTS,
                 'title_en' => 'Our Projects',
@@ -35,6 +35,16 @@ class SectionSeeder extends Seeder
                 'second_title_ar' => 'المشاريع',
                 'short_desc_en' => 'Our Projects',
                 'short_desc_ar' => 'المشاريع',
+            ],
+
+            [
+                'key' => SectionType::PREVIOUS_PROJECTS,
+                'title_en' => 'Previous Projects',
+                'title_ar' => 'المشاريع السابقة',
+                'second_title_en' => 'Previous Projects',
+                'second_title_ar' => 'المشاريع السابقة',
+                'short_desc_en' => 'Previous Projects',
+                'short_desc_ar' => 'المشاريع السابقة',
             ],
 
             [
@@ -47,16 +57,16 @@ class SectionSeeder extends Seeder
                 'short_desc_ar' => 'تواصل معنا',
             ],
 
-            [
-                'key' => SectionType::SERVICES_PAGE,
-                'title_en' => 'Our Services',
-                'title_ar' => 'خدماتنا',
-                'second_title_en' => 'Our Services',
-                'second_title_ar' => 'خدماتنا',
-                'short_desc_en' => 'We offer a wide range of services to meet your needs',
-                'short_desc_ar' => 'نقدم مجموعة واسعة من الخدمات لتلبية احتياجاتك',
-                'status' => 1,
-            ],
+            // [
+            //     'key' => SectionType::SERVICES_PAGE,
+            //     'title_en' => 'Our Services',
+            //     'title_ar' => 'خدماتنا',
+            //     'second_title_en' => 'Our Services',
+            //     'second_title_ar' => 'خدماتنا',
+            //     'short_desc_en' => 'We offer a wide range of services to meet your needs',
+            //     'short_desc_ar' => 'نقدم مجموعة واسعة من الخدمات لتلبية احتياجاتك',
+            //     'status' => 1,
+            // ],
 
             [
                 'key' => SectionType::BLOGS,

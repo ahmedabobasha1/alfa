@@ -179,4 +179,5 @@ return [
     'explore_project' => 'Explore Project',
     'discover' => 'Discover',
     'previous_projects' => 'Previous Projects',
+    'addresses' => 'Addresses',
     ];

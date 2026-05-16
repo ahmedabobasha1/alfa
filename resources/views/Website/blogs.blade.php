@@ -3,24 +3,28 @@
     <!-- start banner -->
     @include('Website.partials._breadcrumb', ['page_title' => __('website.our_blogs')])
     <!-- end banner -->
-    <section class="portfolio2 section-padding">
-        <div class="container">
-            <div class="row">
+    <section class="blog-section pt-120 pb-120 fade-wrapper">
+        <div class="container container-2">
+            <div class="row g-4 fade-top">
                 @foreach ($blogs as $blog)
-                <div class="col-lg-6 col-md-12">
-                    <div class="item mb-25">
-                        <div class="img"> <img src="{{ $blog->image_path }}" alt="{{ $blog->alt_image }}"> </div>
-                        <div class="icon-wrapper"> <i class="ti-arrow-top-right default-icon"></i>
-                            <a href="{{ route('website.blogDetails', $blog) }}" class="hover-icon-link" title="View Project"> <i class="ti-arrow-top-right hover-icon"></i> </a>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="post-card h-100">
+                        <div class="post-thumb">
+                            <img src="{{ $blog->image_path }}" loading="lazy"
+                                alt="{{ $blog->alt_image }}">
+                            
                         </div>
-                        <div class="con">
-                            <h5>{{ $blog->name }}</h5>
-                            <div class="line"></div>
+                        <div class="post-content">
+                            <ul class="post-meta">
+                                <li>{{ $blog->date }}</li>
+                               
+                            </ul>
+                            <h3 class="title"><a href="{{ route('website.blogDetails', $blog->slug) }}">{{ $blog->name }}</a></h3>
+                            <p>{{ $blog->short_desc }}</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
-                
             </div>
         </div>
     </section>

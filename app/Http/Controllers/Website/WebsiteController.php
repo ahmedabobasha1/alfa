@@ -101,7 +101,7 @@ class WebsiteController extends Controller
     public function showContactUs()
     {
         // $data['site_addresses'] = SiteAddress::active()->orderBy('order')->get();
-        $data['contact_us_page'] = Section::where('key', 'contact_us_page')->first();
+        $data['contact_us_page'] = Section::type(SectionType::CONTACT_US_PAGE)->first();
         $data['services'] = Service::active()->get();
         $seoService = new SeoService;
         $data['seoHandler'] = $seoService->forContact();
@@ -287,5 +287,13 @@ class WebsiteController extends Controller
         $videos = GalleryVideo::active()->get();
 
         return view('Website.videos', compact('videos'));
+    }
+
+    public function previousProjects()
+    {
+        
+        $data['previous_projects'] = Project::with('images')->active()->previous()->orderBy('order')->get();
+
+        return view('Website.previous-projects', $data);
     }
 }

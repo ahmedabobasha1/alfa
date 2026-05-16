@@ -25,7 +25,30 @@
 <script src="{{ Path::js('contact.js') }}"></script>
 <script src="{{ Path::js('main.js') }}"></script>
 
- 
+<script>
+    if (typeof Swiper !== "undefined") {
+                var pdGallery = document.querySelector(".pd-details-gallery");
+                if (pdGallery) {
+                    new Swiper(".pd-details-gallery", {
+                        loop: true,
+                        speed: 600,
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                        navigation: {
+                            nextEl: ".pd-details-gallery-next",
+                            prevEl: ".pd-details-gallery-prev"
+                        },
+                        pagination: {
+                            el: ".pd-details-gallery-pagination",
+                            clickable: true
+                        }
+                    });
+                }
+            }
+            if (typeof Fancybox !== "undefined") {
+                Fancybox.bind("[data-fancybox=\"project-gallery\"]", {});
+            }
+</script>
 
 
     <!-- Toastr JS -->

@@ -57,7 +57,7 @@ class HomeController extends Controller
       
         $data['albums'] = Album::with('images')->active()->whereNull('type')->orderBy('order')->take(6)->get();
 
-        $data['services_section'] = Section::type(SectionType::SERVICES)->first();
+        // $data['services_section'] = Section::type(SectionType::SERVICES)->first();
 
         $data['projects'] = Project::with('images')->active()->home()->notPrevious()->orderBy('order')->get();
 

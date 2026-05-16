@@ -1,10 +1,11 @@
-<div class="banner-header middle-height section-padding valign bg-img " data-overlay-dark="5"
-    data-background="{{ $image ?? $breadcrumb->image_path }}">
+<section class="page-header">
+    <div class="bg-img" data-background="{{ $image ?? $breadcrumb->image_path }}"></div>
+    <div class="overlay"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="fw-bold">{{ $page_title ?? __('website.home') }}</h3>
-            </div>
+        <div class="page-header-content">
+            <h1 class="title">{{ $page_title ?? __('website.home') }}</h1>
+            <h4 class="sub-title"><a class='home' href='{{ route('website.home') }}'>{{ __('website.home') }}</a><span class="icon">-</span><a
+                    class='inner-page' href='{{ route('website.home') }}'>{{ $page_title ?? __('website.home') }}</a></h4>
         </div>
     </div>
-</div>
+</section>

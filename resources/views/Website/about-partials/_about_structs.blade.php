@@ -1,59 +1,41 @@
 @foreach ($about_structs as $key => $about_struct)
     @if ($loop->index % 2 == 0)
-        <section class="about section-padding">
-            <div class="container">
-                <div class="section-linetitle">
-                    <div class="d-flex align-items-center">
-                        <div class="leter">
-                            <h4>{{ $key + 1 }}</h4>
-                        </div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="title">
-                        <h6 class="sub-title">{{ $about_struct->title }}</h6>
-                    </div>
-                </div>
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6 col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="image-wrapper" style="position: relative;"> <img class="img"
-                                src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}">
-                        </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-12 animate-box" data-animate-effect="fadeInRight">
-                        <div class="section-title">{{ $about_struct->title }}</div>
-                        <p>{!! $about_struct->text !!}</p>
-                    </div>
+        <div class="row align-items-center g-4 g-lg-5 about-page-row">
+            <div class="col-lg-6 order-lg-1">
+                <div class="about-img slide-anim" data-delay="0.3" data-offset="100" data-direction="left">
+                    <img src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}">
                 </div>
             </div>
-        </section>
+            <div class="col-lg-6 order-lg-2">
+                <div class="about-content slide-anim" data-delay="0.3" data-offset="100" data-direction="right">
+                    <div class="section-heading mb-30">
+                        <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.9" data-stagger="0.03">{{ $about_struct->title }}</h4>
+                        <h2 class="section-title cursor-effect">{{ $about_struct->title }}</h2>
+                    </div>
+                    <p>{!! $about_struct->text !!}</p>
+                </div>
+            </div>
+        </div>
     @else
-        <section class="testimonials2 pt-80 mt-100 mb-0">
-            <div class="container">
-                <div class="section-linetitle">
-                    <div class="d-flex align-items-center">
-                        <div class="leter">
-                            <h4>{{ $key + 1 }}</h4>
-                        </div>
-                        <div class="line"></div>
+        <div class="row align-items-center g-4 g-lg-5 about-page-row">
+            <div class="col-lg-6 order-lg-1">
+                <div class="about-content slide-anim" data-delay="0.3" data-offset="100" data-direction="left">
+                    <div class="section-heading mb-30">
+                        <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.9" data-stagger="0.03">{{ $about_struct->title }}</h4>
+                        <h2 class="section-title cursor-effect">{{ $about_struct->title }}</h2>
                     </div>
-                    <div class="title">
-                        <h6 class="sub-title">{{ $about_struct->title }}</h6>
-                    </div>
-                </div>
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-5 offset-lg-1 col-md-12 animate-box" data-animate-effect="fadeInRight">
-                        <div class="section-title">{{ $about_struct->title }}</div>
-                        <p>{!! $about_struct->text !!}</p>
-                    </div>
-                    <div class="col-lg-6 col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="image-wrapper" style="position: relative;"> <img class="img"
-                                src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}">
-                        </div>
-                    </div>
+                    <ul class="about-list">
+                        {!! $about_struct->text !!}
+                    </ul>
                 </div>
             </div>
-            <!-- Rofaida text -->
-            <div class="ornava-text">{{ $configrations['site_name'] }}</div>
-        </section>
+            <div class="col-lg-6 order-lg-2">
+                <div class="about-img slide-anim" data-delay="0.3" data-offset="100" data-direction="right">
+                    <img src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}">
+                </div>
+            </div>
+        </div>
     @endif
 @endforeach

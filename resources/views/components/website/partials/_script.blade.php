@@ -1,21 +1,31 @@
 <!-- JavaScript -->
-    <script src="{{ Path::js('jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ Path::js('jquery-migrate-3.5.0.min.js') }}"></script>
-    <script src="{{ Path::js('modernizr-2.6.2.min.js') }}"></script>
-    <script src="{{ Path::js('imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ Path::js('jquery.isotope.v3.0.2.js') }}"></script>
-    <script src="{{ Path::js('popper.min.js') }}"></script>
-    <script src="{{ Path::js('bootstrap.min.js') }}"></script>
-    <script src="{{ Path::js('scrollIt.min.js') }}"></script>
-    <script src="{{ Path::js('jquery.waypoints.min.js') }}"></script>
-    <script src="{{ Path::js('owl.carousel.min.js') }}"></script>
-    <script src="{{ Path::js('jquery.stellar.min.js') }}"></script>
-    <script src="{{ Path::js('jquery.magnific-popup.js') }}"></script>
-    <script src="{{ Path::js('YouTubePopUp.js') }}"></script>
-    <script src="{{ Path::js('vegas.slider.min.js') }}"></script>
-    <script src="{{ Path::js('custom.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
-    <!-- End Javascript -->
+
+<!-- JS here -->
+<script src="{{ Path::js('vendor/jquary-3.7.1.min.js') }}"></script>
+<script src="{{ Path::js('vendor/bootstrap-bundle.js') }}"></script>
+<script src="{{ Path::js('vendor/imagesloaded-pkgd.js') }}"></script>
+<script src="{{ Path::js('vendor/waypoints.min.js') }}"></script>
+<script src="{{ Path::js('vendor/venobox.min.js') }}"></script>
+<script src="{{ Path::js('vendor/odometer.min.js') }}"></script>
+<script src="{{ Path::js('vendor/meanmenu.js') }}"></script>
+<script src="{{ Path::js('vendor/jquery.isotope.js') }}"></script>
+<script src="{{ Path::js('vendor/swiper.min.js') }}"></script>
+<script src="{{ Path::js('vendor/split-type.min.js') }}"></script>
+<script src="{{ Path::js('vendor/gsap.min.js') }}"></script>
+<script src="{{ Path::js('vendor/scroll-trigger.min.js') }}"></script>
+<script src="{{ Path::js('vendor/scroll-smoother.js') }}"></script>
+<script src="{{ Path::js('vendor/jquery.carouselTicker.js') }}"></script>
+<script src="{{ Path::js('vendor/nice-select.js') }}"></script>
+<script src="{{ Path::js('vendor/three.min.js') }}"></script>
+<script src="{{ Path::js('vendor/panolens.min.js') }}"></script>
+<script src="{{ Path::js('vendor/jquery.event.move.min.js') }}"></script>
+<script src="{{ Path::js('vendor/jquery.twentytwenty.min.js') }}"></script>
+<script src="{{ Path::js('slider.js') }}"></script>
+<script src="{{ Path::js('banner-process.js') }}"></script>
+<script src="{{ Path::js('contact.js') }}"></script>
+<script src="{{ Path::js('main.js') }}"></script>
+
+ 
 
 
     <!-- Toastr JS -->

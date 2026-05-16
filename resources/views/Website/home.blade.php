@@ -8,13 +8,15 @@
         @include('Website.home-partials._about')
     @endif
 
+    @if (isset($projects_section))
+        @include('Website.home-partials._projects')
+    @endif
+
     @if (isset($services) && $services->isNotEmpty())
         @include('Website.home-partials._services')
     @endif
 
-    @if (isset($projects_section))
-        @include('Website.home-partials._projects')
-    @endif
+  
 
     @if ($albums->isNotEmpty())
         @include('Website.home-partials._gellery')

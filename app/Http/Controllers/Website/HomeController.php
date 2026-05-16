@@ -15,6 +15,7 @@ use App\Models\Section;
 use App\Models\Service;
 use App\Models\SiteAddress;
 use App\Models\Slider;
+use App\Models\Statistic;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Services\Seo\SeoService;
@@ -27,8 +28,19 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $data['hero'] = Slider::type('home')->active()->first();
+        $data['sliders'] = Slider::type('home')->active()->get();
         $data['about'] = AboutUs::first();
+        $data['projects_section'] = Section::type(SectionType::PROJECTS)->first();
+        $data['categories'] = Category::with([
+            'projects' => function ($query) {
+                $query->active()->home()->orderBy('order');
+            },
+        ])->whereHas('projects', function ($query) {
+            $query->active()->home();
+        })->active()->get();
+
+
+        $data['hero'] = Slider::type('home')->active()->first();
         $data['services'] = Service::whereNull('parent_id')
                     ->active()
                     ->home()
@@ -39,15 +51,11 @@ class HomeController extends Controller
         $data['blogs'] = Blog::with('category')->active()->home()->orderBy('order')->take(3)->get();
         $data['albums'] = Album::with('images')->active()->whereNull('type')->orderBy('order')->take(6)->get();
 
-        $data['sliders'] = Slider::type('home')->active()->get();
 
         $data['services_section'] = Section::type(SectionType::SERVICES)->first();
 
-        $data['projects_section'] = Section::type(SectionType::PROJECTS)->first();
 
-        $data['categories'] = Category::with('projects')->whereHas('projects', function ($query) {
-            $query->active()->home()->orderBy('order');
-        })->active()->get();
+        
 
         $data['projects'] = Project::with('images')->active()->home()->orderBy('order')->get();
 
@@ -61,7 +69,7 @@ class HomeController extends Controller
         $data['testimonials_section'] = Section::where('key', 'testimonials_section')->first();
         $data['partners'] = Partener::active()->get();
         $data['partners_section'] = Section::where('key', 'partners_section')->first();
-
+        $data['statistics'] = Statistic::active()->get();
         $data['blogs_section'] = Section::where('key', 'blogs_section')->first();
 
         $data['site_addresses'] = SiteAddress::active()->orderBy('order')->get();

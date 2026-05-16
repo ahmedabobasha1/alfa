@@ -1,21 +1,31 @@
-<section class="about section-padding " data-scroll-index="1">
+<section class="about-section">
+    <div class="about-bg" data-background="{{ Path::imagesPath('about/bg.png') }}"></div>
+    <!-- <div class="about-text"><span>ALFA</span></div> -->
     <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content white-content slide-anim" data-delay="0.15" data-offset="100"
+                    data-direction="left">
+                    <div class="section-heading white-content mb-30">
+                        <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.9" data-stagger="0.03">{{ $about->sub_title }}</h4>
+                        <h2 class="section-title cursor-effect">{{ $about->title }} </h2>
+                    </div>
 
-        <div class="row d-flex align-items-center justify-content-center">
-            <div class="col-lg-6 col-md-12 mb-10  animate-box" data-animate-effect="fadeInRight">
-                <div class="section-linetitle animate-box" data-animate-effect="fade2">
-                    <div class="title">
-                        <h6 class="sub-title text-start">{{ $about->title }}</h6>
+                    <p>
+                        {!! $about->text !!}
+                    </p>
+                    <div class="about-btn">
+                        <a href="{{ route('website.about-us') }}"
+                            class="tl-primary-btn white-btn">{{ __('website.about_us') }} <span class="icon"><i
+                                    class="fa-regular fa-arrow-right"></i></span></a>
                     </div>
                 </div>
-                <p>{!! $about->text !!}</p>
-
-                <a href="{{ route('website.about-us') }}" class="durubtn"> <span class="text-wrapper"><span
-                            class="text slide-up">{{ __('website.read_more') }}</span><span
-                            class="text slide-down">{{ __('website.read_more') }}</span></span></a>
             </div>
-            <div class="col-lg-5 col-md-12  animate-box" data-animate-effect="fadeInLeft">
-                <img src="{{ $about->image_path }}" class="img-fluid" alt="{{ $about->alt_image }}">
+            <div class="col-lg-6">
+                <div class="about-img slide-anim" data-delay="0.28" data-offset="100" data-direction="right">
+                    <img src="{{ $about->image_path }}" alt="{{ $about->alt_image }}">
+                </div>
             </div>
         </div>
     </div>

@@ -20,6 +20,10 @@ class Project extends Model implements Sitemapable
 
     protected $table = 'projects';
 
+    protected $casts = [
+        'is_previous_project' => 'boolean',
+    ];
+
     protected $fillable = [
         'category_id',
         'parent_id',
@@ -37,6 +41,7 @@ class Project extends Model implements Sitemapable
         'show_in_home',
         'show_in_header',
         'show_in_footer',
+        'is_previous_project',
         'meta_title_ar',
         'meta_title_en',
         'meta_desc_ar',
@@ -129,6 +134,15 @@ class Project extends Model implements Sitemapable
     public function scopeFooter($query)
     {
         return $query->where('show_in_footer', true);
+    }
+
+    public function scopeNotPrevious($query)
+    {
+        return $query->where('is_previous_project', false);
+    }
+    public function scopePrevious($query)
+    {
+        return $query->where('is_previous_project', true);
     }
 
     public function getMetaTitleAttribute()

@@ -254,6 +254,7 @@ return [
     'select_author' => 'اختر مؤلف',
     'select_category' => 'اختر قسم',
     'show_in_footer' => 'عرض في الفوتر',
+    'is_previous_project' => 'مشروع سابق',
     'show_in_header' => 'عرض في الهيدر',
     'show_in_home' => 'عرض في الصفحة الرئيسية',
     'show_in_top_header' => 'عرض في رأس الصفحة العلوي',

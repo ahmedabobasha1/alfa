@@ -33,6 +33,7 @@
                                     <th>{{ __('dashboard.image') }}</th>
                                     <th>{{ __('dashboard.category') }}</th>
                                     <th>{{ __('dashboard.parent') }}</th>
+                                    <th>{{ __('dashboard.is_previous_project') }}</th>
                                     <th>{{ __('dashboard.status') }}</th>
                                 </tr>
                             </thead>
@@ -66,7 +67,14 @@
                                                 {{ $project->category?->name }}
                                            
                                         </td>
-                                        <td>{{ $project->parent?->name }}</td>  
+                                        <td>{{ $project->parent?->name }}</td>
+                                        <td>
+                                            @if ($project->is_previous_project)
+                                                <span class="badge bg-info">{{ __('dashboard.yes') }}</span>
+                                            @else
+                                                <span class="badge bg-secondary">{{ __('dashboard.no') }}</span>
+                                            @endif
+                                        </td>
                                         <td>
                                             @if ($project->status == 1)
                                                 <span class="badge bg-success">{{ __('dashboard.yes') }}</span>

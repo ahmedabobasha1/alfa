@@ -34,6 +34,7 @@
 
 
     <x-website.partials._social-icon />
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
     <!-- javascript libraries -->
     <x-website.partials._script />

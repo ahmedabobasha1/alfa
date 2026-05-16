@@ -181,4 +181,5 @@ return [
     'op_hrs' => 'ساعات العمل',
     'explore_project' => 'استكشف المشروع',
     'discover' => 'اكتشف',
+    'previous_projects' => 'المشاريع السابقة',
 ];

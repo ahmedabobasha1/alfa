@@ -27,6 +27,7 @@ Route::group(['controller' => WebsiteController::class], function () {
     Route::get('categories/{category}', 'categoryDetails')->name('categoryDetails');
     Route::get('projects', 'projects')->name('projects');
     Route::get('projects/{project}', 'projectDetails')->name('projectDetails');
+    Route::get('previous-projects', 'previousProjects')->name('previousProjects');
 
     Route::post('save-application', 'saveApplication')->name('saveApplication');
     Route::get('partners', 'partners')->name('partners');

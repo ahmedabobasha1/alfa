@@ -40,6 +40,7 @@ class StoreProjectRequest extends FormRequest
             'show_in_home' => ['nullable', 'boolean'],
             'show_in_header' => ['nullable', 'boolean'],
             'show_in_footer' => ['nullable', 'boolean'],
+            'is_previous_project' => ['nullable', 'boolean'],
             'meta_title_ar' => ['nullable', 'string', 'max:255'],
             'meta_title_en' => ['nullable', 'string', 'max:255'],
             'meta_desc_ar' => ['nullable', 'string'],

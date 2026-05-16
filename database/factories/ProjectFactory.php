@@ -36,6 +36,7 @@ class ProjectFactory extends Factory
             'show_in_home' => $this->faker->boolean(),
             'show_in_header' => $this->faker->boolean(),
             'show_in_footer' => $this->faker->boolean(),
+            'is_previous_project' => false,
             'slug_ar' => preg_replace('/[\/\\\ ]/', '-', $name_ar),
             'slug_en' => preg_replace('/[\/\\\ ]/', '-', $name_en),
             'created_at' => now(),

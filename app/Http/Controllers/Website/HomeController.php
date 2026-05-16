@@ -33,31 +33,33 @@ class HomeController extends Controller
         $data['projects_section'] = Section::type(SectionType::PROJECTS)->first();
         $data['categories'] = Category::with([
             'projects' => function ($query) {
-                $query->active()->home()->orderBy('order');
+                $query->active()->home()->notPrevious()->orderBy('order');
             },
         ])->whereHas('projects', function ($query) {
-            $query->active()->home();
+            $query->active()->home()->notPrevious();
         })->active()->get();
+
+        $data['previous_projects_section'] = Section::type(SectionType::PREVIOUS_PROJECTS)->first();
+        $data['previous_projects'] = Project::with('images')->active()->home()->previous()->orderBy('order')->get();
+
+        $data['blogs_section'] = Section::type(SectionType::BLOGS)->first();
+        $data['blogs'] = Blog::with('category')->active()->home()->orderBy('order')->take(3)->get();
 
 
         $data['hero'] = Slider::type('home')->active()->first();
         $data['services'] = Service::whereNull('parent_id')
-                    ->active()
-                    ->home()
-                    ->orderBy('order')
-                    ->take(6)
-                    ->get();
-        $data['projects'] = Project::with('images')->active()->home()->orderBy('order')->take(3)->get();
-        $data['blogs'] = Blog::with('category')->active()->home()->orderBy('order')->take(3)->get();
+            ->active()
+            ->home()
+            ->orderBy('order')
+            ->take(6)
+            ->get();
+        $data['projects'] = Project::with('images')->active()->home()->notPrevious()->orderBy('order')->take(3)->get();
+      
         $data['albums'] = Album::with('images')->active()->whereNull('type')->orderBy('order')->take(6)->get();
-
 
         $data['services_section'] = Section::type(SectionType::SERVICES)->first();
 
-
-        
-
-        $data['projects'] = Project::with('images')->active()->home()->orderBy('order')->get();
+        $data['projects'] = Project::with('images')->active()->home()->notPrevious()->orderBy('order')->get();
 
         $data['contact_section'] = Section::type(\App\Enums\SectionType::CONTACT_SECTION)->first();
 
@@ -70,7 +72,7 @@ class HomeController extends Controller
         $data['partners'] = Partener::active()->get();
         $data['partners_section'] = Section::where('key', 'partners_section')->first();
         $data['statistics'] = Statistic::active()->get();
-        $data['blogs_section'] = Section::where('key', 'blogs_section')->first();
+       
 
         $data['site_addresses'] = SiteAddress::active()->orderBy('order')->get();
         $data['phones'] = Phone::active()->get();

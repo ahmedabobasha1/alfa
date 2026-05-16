@@ -44,6 +44,7 @@ class ProjectService
             $data['show_in_home'] = $data['show_in_home'] ?? 0;
             $data['show_in_header'] = $data['show_in_header'] ?? 0;
             $data['show_in_footer'] = $data['show_in_footer'] ?? 0;
+            $data['is_previous_project'] = $data['is_previous_project'] ?? 0;
             $data['index'] = $data['index'] ?? 0;
             $data['slug_ar'] = preg_replace('/\s+/u', '-', trim($data['slug_ar']));
             $data['slug_en'] = Str::slug($data['slug_en']);

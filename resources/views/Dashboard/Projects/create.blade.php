@@ -131,6 +131,13 @@
                                         <label for="switch4" data-on-label="{{ __('dashboard.yes') }}" data-off-label="{{ __('dashboard.no') }}"></label>
                                     </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <h5 class="font-size-14 mb-3">{{ __('dashboard.is_previous_project') }}</h5>
+                                        <input type="checkbox" id="switch_prev_project" switch="none" value="1" name="is_previous_project" />
+                                        <label for="switch_prev_project" data-on-label="{{ __('dashboard.yes') }}" data-off-label="{{ __('dashboard.no') }}"></label>
+                                    </div>
+                                </div>
 
                             </div>
 

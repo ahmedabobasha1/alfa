@@ -1,94 +1,96 @@
-<footer class="footer">
-    <div class="background banner-img bg-img bg-imgfixed bg-position-top">
-        <div class="container">
-            <!-- top -->
-            <div class="top ms-5 me-5">
-                <div class="row align-items-center justify-content-between">
+<footer id="footer" class="shadow-lg">
+    <div class="container">
+        <!-- Almira-style: 3 columns — company story | contact | address + embedded map -->
+        <div class="footer-top px-md-5">
+            <div class="row g-4 g-lg-5 align-items-start">
+                <!-- 1) Brand + about (same role as Almira’s first column) -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-about">
+                        <h4 class="footer-title">{{ $configrations['site_name'] }}</h4>
+                        <div class="footer-logo mb-4">
+                            <img src="{{ Path::FooterLogo() }}" alt="{{ $configrations['site_name'] }}" width="160" />
+                        </div>
+                        <p class="footer-description">
+                            {!! $configrations['site_footer_text'] !!}
+                        </p>
+                        <div class="footer-social">
+                            @if ($settings['site_facebook'])
+                                <a href="{{ $settings['site_facebook'] }}" class="social-link"
+                                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            @endif
+                            @if ($settings['site_instagram'])
+                                <a href="{{ $settings['site_instagram'] }}" class="social-link"
+                                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            @endif
+                            @if ($settings['site_twitter'])
+                                <a href="{{ $settings['site_twitter'] }}" class="social-link"
+                                    aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            @endif
+                            @if ($settings['site_youtube'])
+                                <a href="{{ $settings['site_youtube'] }}" class="social-link"
+                                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            @endif
 
-                    <!-- Left column -->
-                    <div class="col-md-4">
-                        <div class="item">
-                            <div class="logo mb-30 w-75">
-                                <img src="{{ Path::FooterLogo() }}" alt="{{ $configrations['site_name'] }}">
-                            </div>
-                            <p class="mb-15">
-                                {!! $configrations['site_footer_text'] !!}
-                            </p>
-
-                            <div class="social-icons mb-30">
-                                <ul class="list-inline">
-                                    @if($settings['site_instagram'])
-                                        <li><a href="{{ $settings['site_instagram'] }}" target="_blank"><i
-                                                    class="fa-brands fa-instagram"></i></a></li>
-                                    @endif
-                                    @if($settings['site_twitter'])
-                                        <li><a href="{{ $settings['site_twitter'] }}" target="_blank"><i
-                                                    class="fab fa-x-twitter"></i></a></li>
-                                    @endif
-                                    @if($settings['site_facebook'])
-                                        <li><a href="{{ $settings['site_facebook'] }}" target="_blank"><i
-                                                    class="fa-brands fa-facebook-f"></i></a></li>
-                                    @endif
-                                </ul>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Right column -->
-                    <div class="col-md-4">
-                        <div class="item">
-                            <h3 class="mb-20 fs-4 fw-bold">{{ __('website.get_in_touch') }}</h3>
-
-                            <div class="contact-list d-flex flex-column gap-3 align-items-start">
-                                @foreach ($site_addresses as $site_address)
-                                    <div class="d-flex align-items-center justify-content-md-end gap-2">
-                                        <i class="ti-location-pin fs-5"></i>
-                                        <p class="mb-0 fs-6"><a href="{{ $site_address->map_link }}" target="_blank">{{ $site_address->address }}</a></p>
-                                    </div>
-                                @endforeach
-
-                                @foreach ($phones as $phone)
-                                <div class="d-flex align-items-center justify-content-md-end  gap-2">
-                                    <i class="ti-mobile fs-5"></i>
-                                    <a class="mb-0 fs-6" href="tel:+{{ $phone->code . $phone->phone }}">{{  $phone->phone }}</a>
-
-                                </div>
-                                @endforeach
-
-                                <div class="d-flex align-items-center justify-content-md-end  gap-2">
-                                    <i class="ti-email  fs-5"></i>
-                                    <a class="mb-0 fs-6" href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
 
-            <!-- bottom -->
-            <div class="bottom ms-5 me-5">
-                <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="links">
-                            <ul>
-                                <li><a href="{{ route('website.home') }}">{{ __('website.home') }}</a></li>
-                                <li><a href="{{ route('website.about-us') }}">{{ __('website.about') }}</a></li>
-                                <li><a href="{{ route('website.services') }}">{{ __('website.services') }}</a></li>
-                                <li><a href="{{ route('website.projects') }}">{{ __('website.projects') }}</a></li>
-                                {{-- <li><a href="{{ route('website.gallery') }}">{{ __('website.gallery') }}</a></li> --}}
-                                {{-- <li><a href="{{ route('website.blogs') }}">{{ __('website.our_blogs') }}</a></li> --}}
-                                <li><a href="{{ route('website.contact-us') }}">{{ __('website.contact') }}</a></li>
-                            </ul>
-                        </div>
+                <!-- 2) Contact (same role as Almira’s «تواصل معنا») -->
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-title">Contact us</h4>
+                    <ul class="footer-almira-contact">
+                        @foreach ($phones as $phone)
+                            <li>
+                                <span>{{ $phone->name }}</span>
+                                <a href="tel:+{{ $phone->code . $phone->phone }}">{{ $phone->code . $phone->phone }}</a>
+                            </li>
+                        @endforeach
+                        <li>
+                            <span>Email</span>
+                            <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
+                        </li>
+                        @foreach ($site_addresses as $site_address)
+                            <li>
+                                <span>{{ $site_address->name }}</span>
+                                <a href="{{ $site_address->map_link }}"
+                                    target="_blank">{{ $site_address->address }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <!-- 3) Addresses + map in footer (same role as Almira’s «العناوين» + iframe) -->
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-title">{{ __('website.addresses') }}</h4>
+                    <div class="footer-address-intro mb-3">
+                        <p class="mb-2">
+                            <strong class="d-block text-white mb-1"> {{$main_address->title}}</strong>
+                            <a href="{{ $main_address->map_link }}" target="_blank" rel="noopener noreferrer"
+                                class="footer-map-link">{{ $main_address->address }}</a>
+                        </p>
                     </div>
-                    <div class="col-lg-4 col-md-12 text-end">
-                        <p>Copyright 2026 by <a href="https://www.be-group.com/" target="_blank">BeGroup</a></p>
+                    <div class="footer-map-embed">
+                        <iframe title="{{ $main_address->title }}" src="{{ $main_address->map_url }}" width="100%"
+                            height="400" style="border: 0" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="copyright text-center py-4">
+            <p class="mb-0">
+                &copy; All Rights Reserved
+                <strong class="second-color">{{ $configrations['site_name'] }}</strong>
+            </p>
+        </div>
     </div>
+
+    <!-- Decorative Elements -->
+    <div class="footer-decoration">
+        <div class="decoration-circle circle-1"></div>
+        <div class="decoration-circle circle-2"></div>
+        <div class="decoration-line line-1"></div>
+        <div class="decoration-line line-2"></div>
+    </div>
+
 </footer>

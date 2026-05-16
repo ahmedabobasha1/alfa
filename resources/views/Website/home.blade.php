@@ -12,22 +12,22 @@
         @include('Website.home-partials._projects')
     @endif
 
-    @if (isset($services) && $services->isNotEmpty())
-        @include('Website.home-partials._services')
+    @if (isset($previous_projects_section) && $previous_projects->isNotEmpty())
+        @include('Website.home-partials._previous-projects')
+    @endif
+
+    @if ($blogs->isNotEmpty())
+         @include('Website.home-partials._blogs')
     @endif
 
   
 
-    @if ($albums->isNotEmpty())
-        @include('Website.home-partials._gellery')
-    @endif
+  
 
-    @if ($blogs->isNotEmpty())
-        @include('Website.home-partials._blogs')
-    @endif
+   
 
 
-    @include('Website.home-partials._contact-us')
+    {{-- @include('Website.home-partials._contact-us') --}}
 
 
 </x-website.layout>

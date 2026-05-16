@@ -241,6 +241,7 @@ return [
     'select_author' => 'Select Author',
     'select_category' => 'Select Category',
     'show_in_footer' => 'Show In Footer',
+    'is_previous_project' => 'Previous project',
     'show_in_header' => 'Show In Header',
     'show_in_home' => 'Show In Home',
     'show_in_sidebar' => 'Show In Sidebar',

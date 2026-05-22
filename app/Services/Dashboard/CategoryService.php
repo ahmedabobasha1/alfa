@@ -3,9 +3,9 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Category;
-use App\Models\Media;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Helper\Media;
 
 class CategoryService
 {

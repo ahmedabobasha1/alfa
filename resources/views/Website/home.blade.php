@@ -7,7 +7,10 @@
     @if (isset($about))
         @include('Website.home-partials._about')
     @endif
-
+    
+    @if (isset($statistics))
+        @include('Website.home-partials._statistics')
+    @endif
     @if (isset($projects_section))
         @include('Website.home-partials._projects')
     @endif

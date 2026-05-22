@@ -20,7 +20,7 @@
                                 <p>{{ $main_address->address }}</p>
                             </div>
                             <div class="request-item ">
-                                <span>{{ __('website.support') }}</span>
+                                <span>{{ __('website.call_us') }}</span>
                                 @foreach ($phones as $phone)
                                 <a href="tel:+{{ $phone->code . $phone->phone }}">{{ $phone->code . $phone->phone }}</a>
                                 @endforeach

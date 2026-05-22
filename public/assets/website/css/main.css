@@ -16915,8 +16915,18 @@ background-color: #100801;
 
 @media only screen and (max-width: 992px) {
     .page-header .page-header-content {
-        padding: 120px 0 100px 0
+       height:50vh;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     }
+    .page-header .page-header-content .title {
+    color: var(--tl-color-common-white);
+    font-size: 50px !important;
+    font-weight: 400;
+    margin-bottom: 25px
+}
 }
 
 .page-header .page-header-content .title {

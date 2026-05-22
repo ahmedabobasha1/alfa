@@ -3245,7 +3245,7 @@ ul {
     font-family: "Font Awesome 6 Pro";
     font-size: 12px;
     font-weight: 700;
-    content: "";
+    content: "ï¸";
     color: var(--tl-color-common-white);
     position: absolute;
     top: 50%;
@@ -4051,7 +4051,7 @@ ul {
 }
 
 .mean-bar .mean-nav.mean-nav>ul li a.mean-expand:before {
-    content: ""
+    content: "ï”"
 }
 
 .mean-bar .mean-nav.mean-nav>ul li a.mean-expand.mean-clicked:after {
@@ -4735,7 +4735,7 @@ ul {
 }
 
 .about-section {
-    padding: 75px 0;
+    /* padding: 75px 0; */
     position: relative;
     z-index: 1;
     overflow-x: hidden
@@ -4774,7 +4774,7 @@ ul {
     overflow: visible;
     background-color: #f6f7f9;
     padding-top: 90px;
-    padding-bottom: 100px
+    /* padding-bottom: 100px; */
 }
 
 .about-section.about-page .container {
@@ -16208,7 +16208,7 @@ background-color: #100801;
     font-family: "Font Awesome 6 Pro";
     font-size: 14px;
     font-weight: 700;
-    content: "";
+    content: "ïƒ—";
     color: var(--tl-color-text-body);
     position: absolute;
     top: 63%;

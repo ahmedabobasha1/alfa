@@ -5,7 +5,7 @@
                 <div class="row align-items-center g-4 g-lg-5 about-page-row">
                     <div class="col-lg-6 order-lg-1">
                         <div class="about-img slide-anim" data-delay="0.3" data-offset="100" data-direction="left">
-                            <img src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}" height="520px">
+                            <img src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}" style="height: 520px !important;">
                         </div>
                     </div>
                     <div class="col-lg-6 order-lg-2">
@@ -36,7 +36,7 @@
                     <div class="col-lg-6 order-lg-2">
                         <div class="about-img slide-anim" data-delay="0.3" data-offset="100" data-direction="right">
                             <img src="{{ $about_struct->icon_path }}" alt="{{ $about_struct->alt_icon }}"
-                                height="520px">
+                                style="height: 520px !important;">
                         </div>
                     </div>
                 </div>

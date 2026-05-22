@@ -31,7 +31,7 @@
             @endforeach
         </div>
         <div class="project-btn mt-5 fade-top">
-            <a href="{{ route('website.previousProjects') }}" class="tl-primary-btn ">{{ __('website.previous_projects') }} <span class="icon"><i
+            <a href="{{ route('website.previous-projects') }}" class="tl-primary-btn ">{{ __('website.previous_projects') }} <span class="icon"><i
                         class="fa-regular fa-arrow-right"></i></span></a>
         </div>
     </div>

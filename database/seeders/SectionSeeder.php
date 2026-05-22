@@ -78,16 +78,16 @@ class SectionSeeder extends Seeder
                 'short_desc_ar' => 'أحدث الأخبار والتحديثات',
             ],
 
-            [
-                'key' => SectionType::CONTACT_US,
-                'title_en' => 'Get in Touch',
-                'title_ar' => 'تواصل معنا',
-                'second_title_en' => 'Have Questions About Your Vascular Health? Let’s Talk!',
-                'second_title_ar' => 'هل لديك أسئلة حول صحة الأوعية الدموية؟ لنتحدث!',
-                'short_desc_en' => 'Have Questions About Your Vascular Health? Let’s Talk!',
-                'short_desc_ar' => 'هل لديك أسئلة حول صحة الأوعية الدموية؟ لنتحدث!',
-                'status' => 1,
-            ],
+            // [
+            //     'key' => SectionType::CONTACT_US,
+            //     'title_en' => 'Get in Touch',
+            //     'title_ar' => 'تواصل معنا',
+            //     'second_title_en' => 'Have Questions About Your Vascular Health? Let’s Talk!',
+            //     'second_title_ar' => 'هل لديك أسئلة حول صحة الأوعية الدموية؟ لنتحدث!',
+            //     'short_desc_en' => 'Have Questions About Your Vascular Health? Let’s Talk!',
+            //     'short_desc_ar' => 'هل لديك أسئلة حول صحة الأوعية الدموية؟ لنتحدث!',
+            //     'status' => 1,
+            // ],
 
             [
                 'key' => SectionType::BREADCRUMB,

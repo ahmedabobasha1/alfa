@@ -16,7 +16,7 @@
                                     @if ($menu->children->isNotEmpty())
                                         <li class="menu-item-has-children">
                                             <a
-                                                href="{{ route('website.' . $menu->route_name) }}">{{ $menu->name }}</a>
+                                                href="#">{{ $menu->name }}</a>
                                             <ul>
                                                 @foreach ($menu->children as $child)
                                                     <li><a

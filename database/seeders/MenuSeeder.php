@@ -55,7 +55,6 @@ class MenuSeeder extends Seeder
                 'order' => 5,
                 'status' => true,
             ],
-            ]
             // [
             //     'name_en' => 'services',
             //     'name_ar' => 'الخدمات',
@@ -87,7 +86,7 @@ class MenuSeeder extends Seeder
                 'parent_id' => null,
                 'order' => 5,
                 'status' => true,
-            ]
+            ],
 
             [
                 'name_en' => 'Blogs',

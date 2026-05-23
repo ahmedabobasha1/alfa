@@ -1,8 +1,8 @@
 
 
-<section class="about-section about-page overflow-hidden">
+<section class="about-section about-page overflow-hidden pt-5">
    
-    <div class="container">
+    <div class="container pt-5">
         <!-- Who We Are -->
         <div class="row align-items-center g-4 g-lg-5 about-page-row">
             <div class="col-lg-6 order-lg-1">
@@ -20,7 +20,7 @@
             <div class="col-lg-6 order-lg-2">
                 <div class="about-img slide-anim" data-delay="0.3" data-offset="100"
                     data-direction="right">
-                    <img src="{{ $about->image_path }}" alt="{{ $about->alt_image }}">
+                    <img src="{{ $about->image_path }}" alt="{{ $about->alt_image }}" style="height: 520px !important;">
                 </div>
             </div>
         </div>

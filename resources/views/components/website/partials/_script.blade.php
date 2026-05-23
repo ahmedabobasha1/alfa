@@ -24,7 +24,7 @@
 <script src="{{ Path::js('banner-process.js') }}"></script>
 <script src="{{ Path::js('contact.js') }}"></script>
 <script src="{{ Path::js('main.js') }}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
 <script>
     if (typeof Swiper !== "undefined") {
                 var pdGallery = document.querySelector(".pd-details-gallery");
@@ -84,7 +84,8 @@
                 });
             }
         });
-        Fancybox.bind('[data-fancybox]', {
+        
+        Fancybox?.bind('[data-fancybox]', {
         // Your custom options
       });    
     </script>

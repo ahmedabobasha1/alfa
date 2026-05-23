@@ -4028,7 +4028,7 @@ ul {
 .mean-bar .mean-nav.mean-nav>ul li a.mean-expand:before,
 .mean-bar .mean-nav.mean-nav>ul li a.mean-expand:after {
     font-size: 15px;
-    font-family: "Font Awesome 6 Pro";
+    font-family: "Font Awesome 6 pro";
     font-weight: 900;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -4038,7 +4038,7 @@ ul {
 }
 
 .mean-bar .mean-nav.mean-nav>ul li a.mean-expand:before {
-    content: "ï”"
+    content: "\f105"
 }
 
 .mean-bar .mean-nav.mean-nav>ul li a.mean-expand.mean-clicked:after {

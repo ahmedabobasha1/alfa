@@ -13,7 +13,20 @@
                         <div class="mobile-menu-items">
                             <ul>
                                 @foreach ($menus as $menu)
-                                    @if ($menu->children->isNotEmpty())
+                                @if( $menu->route_name == \App\Enums\MenuRouteName::PROJECTS->value)    
+                                <li class="menu-item-has-children">
+                                    <a
+                                        href="{{ route('website.' . $menu->route_name) }}">{{ $menu->name }}</a>
+                                    <ul>
+                                        @foreach ($headerCategories as $category)
+                                            <li class="menu-item">
+                                                <a
+                                                    href="{{ route('website.categoryDetails', $category) }}">{{ $category->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul> 
+                                </li>
+                                @elseif ($menu->children->isNotEmpty())
                                         <li class="menu-item-has-children">
                                             <a
                                                 href="#">{{ $menu->name }}</a>

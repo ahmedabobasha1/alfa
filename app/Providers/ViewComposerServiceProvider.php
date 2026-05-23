@@ -13,6 +13,7 @@ use App\Models\Section;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\SiteAddress;
+use App\Models\Category;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
@@ -105,6 +106,12 @@ class ViewComposerServiceProvider extends ServiceProvider
             $phones = Cache::remember('phones', 60, function () {
                 return Phone::active()->get();
             });
+            
+            $headerCategories = Cache::remember('header_categories', 60, function () {
+                return Category::with('projects')->whereHas('projects', function ($query) {
+                    $query->active()->orderBy('order');
+                })->active()->get();
+            });
 
             // get call to action phone numbers
             $cta_phone_full = $settings['phone'] ?? ''; // e.g. +201061560915
@@ -124,6 +131,7 @@ class ViewComposerServiceProvider extends ServiceProvider
                 'breadcrumb' => $breadcrumb,
                 'pages' => $pages,
                 'phones' => $phones,
+                'headerCategories' => $headerCategories,
                 'cta_phone_full' => $cta_phone_full,
                 'cta_phone' => $cta_phone,
                 'cta_whatsapp_full' => $cta_whatsapp_full,

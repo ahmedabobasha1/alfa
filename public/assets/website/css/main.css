@@ -3240,20 +3240,7 @@ ul {
     padding-right: 0
 }
 
-.header .primary-header-inner .header-menu-wrap ul .menu-item-has-children:after {
-    background-image: none;
-    font-family: "Font Awesome 6 Pro";
-    font-size: 12px;
-    font-weight: 700;
-    content: "ï¸";
-    color: var(--tl-color-common-white);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    transition: all .3s ease-in-out;
-    cursor: pointer
-}
+
 
 .header .primary-header-inner .header-menu-wrap ul .menu-item-has-children:hover:after {
     color: var(--tl-color-theme-primary)
@@ -4773,7 +4760,7 @@ ul {
 .about-section.about-page {
     overflow: visible;
     background-color: #f6f7f9;
-    padding-top: 90px;
+    /* padding-top: 90px; */
     /* padding-bottom: 100px; */
 }
 

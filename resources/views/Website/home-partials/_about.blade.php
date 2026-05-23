@@ -1,4 +1,4 @@
-<section class="about-section">
+<section class="about-section py-5">
     <div class="about-bg" data-background="{{ Path::imagesPath('about/bg.png') }}"></div>
     <!-- <div class="about-text"><span>ALFA</span></div> -->
     <div class="container">

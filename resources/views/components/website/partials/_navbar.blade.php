@@ -26,6 +26,19 @@
                                         @endforeach
                                     </ul> 
                                 </li>
+                                @elseif( $menu->route_name == \App\Enums\MenuRouteName::PREVIOUS_PROJECTS->value)    
+                                <li class="menu-item-has-children">
+                                    <a
+                                        href="{{ route('website.' . $menu->route_name) }}">{{ $menu->name }}</a>
+                                    <ul>
+                                        @foreach ($previousProjects as $project)
+                                        <li class="menu-item">
+                                            <a
+                                                href="{{ route('website.projectDetails', $project->slug) }}">{{ $project->name }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                                 @elseif ($menu->children->isNotEmpty())
                                         <li class="menu-item-has-children">
                                             <a

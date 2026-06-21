@@ -2,6 +2,37 @@
 (function ($) {
     "use strict";
 
+    var isRtl = document.documentElement.getAttribute("dir") === "rtl";
+
+    function finishPreloaderWithoutAnimation() {
+        var preloader = document.querySelector(".preloader");
+        if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.display = "none";
+        }
+        if (window.startSliderAfterPreload) {
+            window.startSliderAfterPreload();
+        }
+    }
+
+    function revealStaticContentForRtl() {
+        var selector = ".slide-anim, [data-text-animation], .text-animation-effect, .fade-top, .scale, .reveal, .img-reveal, .slider-section [data-animation]";
+        document.querySelectorAll(selector).forEach(function (el) {
+            el.style.opacity = "1";
+            el.style.visibility = "visible";
+        });
+        if (typeof gsap !== "undefined") {
+            gsap.set(selector, {
+                autoAlpha: 1,
+                opacity: 1,
+                x: 0,
+                y: 0,
+                scale: 1,
+                clearProps: "transform"
+            });
+        }
+    }
+
     // Get Device width
     var device_width = window.innerWidth;
 
@@ -1110,11 +1141,12 @@ animateBars();
         });
 
         // Scroll Animation
-
+if (!isRtl) {
         let typeSplit = new SplitType("[data-text-animation]", {
             types: "lines,words, chars",
             className: "line",
         });
+    }
         var text_animations = document.querySelectorAll(
             "[data-text-animation]"
             );

@@ -1,6 +1,8 @@
 (function ($) {
     "use strict";
 
+    var isRtl = document.documentElement.getAttribute("dir") === "rtl";
+
     $(document).ready(function () {
         // 1. Check if the slider element exists. If not, exit early.
         if ($(".antra-slider").length === 0) {
@@ -9,6 +11,10 @@
 
         /* ============================ Animation Function ============================ */
         function sliderAnimations(elements) {
+            if (isRtl) {
+                elements.css({ opacity: 1 });
+                return;
+            }
             var animationEndEvents = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
             elements.each(function () {
                 var $this = $(this);
@@ -34,6 +40,7 @@
             init: false,
             speed: 1500,
             loop: true,
+            rtl: isRtl,
             effect: "fade", // Fixed typo: "verticle" isn't a default Swiper effect, usually "vertical" or "fade"
             grabCursor: true,
             autoplay: false,
@@ -68,7 +75,11 @@
             swiper.update();
 
             const elements = $(swiper.slides[swiper.activeIndex]).find("[data-animation]");
-            elements.css("opacity", 0);
+            if (isRtl) {
+                elements.css("opacity", 1);
+            } else {
+                elements.css("opacity", 0);
+            }
 
             setTimeout(function () {
                 const sliderSection = document.querySelector(".slider-section");
@@ -84,7 +95,7 @@
                     disableOnInteraction: false,
                 };
                 swiper.autoplay.start();
-            }, 80);
+            }, isRtl ? 0 : 80);
         };
     });
 })(jQuery);

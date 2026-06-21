@@ -109,7 +109,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             
             $headerCategories = Cache::remember('header_categories', 60, function () {
                 return Category::with('projects')->whereHas('projects', function ($query) {
-                    $query->active()->orderBy('order');
+                    $query->active()->notPrevious()->orderBy('order');
                 })->active()->take(4)->get();
             });
 
@@ -219,7 +219,10 @@ class ViewComposerServiceProvider extends ServiceProvider
                 $altLangLink = LaravelLocalization::getLocalizedURL($targetLang);
             }
 
-            $view->with('altLangLink', $altLangLink);
+            $view->with([
+                'altLangLink' => $altLangLink,
+                'targetLang' => $targetLang,
+            ]);
         });
 
         View::composer(['components.dashboard.*'], function ($view) {

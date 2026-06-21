@@ -67,6 +67,12 @@
                 </div>
                 <div class="header-right-wrap">
                     <div class="header-desktop-extras">
+                        <a href="{{ $altLangLink }}" class="header-lang-switch" hreflang="{{ $targetLang }}"
+                            rel="alternate"
+                            aria-label="{{ $targetLang === 'en' ? 'Switch to English' : 'Switch to Arabic' }}">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span>{{ $targetLang === 'en' ? 'EN' : 'AR' }}</span>
+                        </a>
                         <a href="tel:{{ $settings['phone'] }}" class="header-contact">
                             <span class="icon"><i class="fa-regular fa-phone"></i></span>
                             <span class="content">
@@ -98,6 +104,12 @@
                         </div>
                     </div>
                     <div class="header-mobile-extras ">
+                        <a href="{{ $altLangLink }}" class="header-lang-switch header-lang-switch--mobile"
+                            hreflang="{{ $targetLang }}" rel="alternate"
+                            aria-label="{{ $targetLang === 'en' ? 'Switch to English' : 'Switch to Arabic' }}">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span>{{ $targetLang === 'en' ? 'EN' : 'AR' }}</span>
+                        </a>
                         <a href="tel:{{ $settings['phone'] }}" class="mobile-header-call" aria-label="Call {{ $configrations['site_name'] }}">
                             <i class="fa-regular fa-phone" aria-hidden="true"></i>
                         </a>
@@ -126,6 +138,14 @@
                     aria-hidden="true"></i></button>
         </div>
         <div class="side-menu-wrap mobile-nav-mount" id="alfa-mobile-nav-mount"></div>
+        <div class="side-menu-lang">
+            <a href="{{ $altLangLink }}" class="header-lang-switch header-lang-switch--drawer" hreflang="{{ $targetLang }}"
+                rel="alternate"
+                aria-label="{{ $targetLang === 'en' ? 'Switch to English' : 'Switch to Arabic' }}">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <span>{{ $targetLang === 'en' ? 'EN' : 'AR' }}</span>
+            </a>
+        </div>
         <div class="side-menu-contact">
             <div class="side-menu-header">
                 <h3>{{ __('website.contact_us') }}</h3>

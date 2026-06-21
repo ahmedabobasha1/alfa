@@ -109,10 +109,13 @@ class ViewComposerServiceProvider extends ServiceProvider
             
             $headerCategories = Cache::remember('header_categories', 60, function () {
                 return Category::with('projects')->whereHas('projects', function ($query) {
-                    $query->active()->orderBy('order');
-                })->active()->get();
+                    $query->active()->notPrevious()->orderBy('order');
+                })->active()->take(4)->get();
             });
 
+            $previousProjects = Cache::remember('previous_projects', 60, function () {
+                return Project::with('images')->active()->previous()->orderBy('order')->take(4)->get();
+            });
             // get call to action phone numbers
             $cta_phone_full = $settings['phone'] ?? ''; // e.g. +201061560915
             $cta_phone = ltrim($cta_phone_full, '+');
@@ -132,6 +135,7 @@ class ViewComposerServiceProvider extends ServiceProvider
                 'pages' => $pages,
                 'phones' => $phones,
                 'headerCategories' => $headerCategories,
+                'previousProjects' => $previousProjects,
                 'cta_phone_full' => $cta_phone_full,
                 'cta_phone' => $cta_phone,
                 'cta_whatsapp_full' => $cta_whatsapp_full,
@@ -215,7 +219,10 @@ class ViewComposerServiceProvider extends ServiceProvider
                 $altLangLink = LaravelLocalization::getLocalizedURL($targetLang);
             }
 
-            $view->with('altLangLink', $altLangLink);
+            $view->with([
+                'altLangLink' => $altLangLink,
+                'targetLang' => $targetLang,
+            ]);
         });
 
         View::composer(['components.dashboard.*'], function ($view) {

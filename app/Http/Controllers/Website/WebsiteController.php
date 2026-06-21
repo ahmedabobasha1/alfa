@@ -194,9 +194,9 @@ class WebsiteController extends Controller
     public function projects()
     {
         $data['categories'] = Category::with('projects')->whereHas('projects', function ($query) {
-            $query->active()->orderBy('order');
+            $query->active()->notPrevious()->orderBy('order');
         })->active()->get();
-        $data['projects'] = Project::with(['images', 'category'])->active()->orderBy('order')->get();
+        $data['projects'] = Project::with(['images', 'category'])->active()->notPrevious()->orderBy('order')->get();
         $data['projects_page_section'] = Section::type(SectionType::PROJECTS_PAGE)->first();
 
         $seoService = new SeoService;

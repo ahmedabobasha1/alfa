@@ -31,10 +31,17 @@
                                     <a
                                         href="{{ route('website.' . $menu->route_name) }}">{{ $menu->name }}</a>
                                     <ul>
-                                        @foreach ($previousProjects as $project)
+                                        @foreach ($previousProjectsCategories as $category)
                                         <li class="menu-item">
                                             <a
-                                                href="{{ route('website.projectDetails', $project->slug) }}">{{ $project->name }}</a>
+                                                href="{{ route('website.categoryDetails', $category) }}">{{ $category->name }}</a>
+                                            </li>
+                                            {{-- @foreach ($category->projects as $project)
+                                            <li class="menu-item">
+                                                <a
+                                                    href="{{ route('website.projectDetails', $project->slug) }}">{{ $project->name }}</a>
+                                            </li>
+                                            @endforeach --}}
                                         </li>
                                         @endforeach
                                     </ul>

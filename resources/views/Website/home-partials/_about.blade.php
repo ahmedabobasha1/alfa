@@ -1,8 +1,8 @@
-<section class="about-section">
+<section class="about-section py-5">
     <div class="about-bg" data-background="{{ Path::imagesPath('about/bg.png') }}"></div>
     <!-- <div class="about-text"><span>ALFA</span></div> -->
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center gy-4">
             <div class="col-lg-6">
                 <div class="about-content white-content slide-anim" data-delay="0.15" data-offset="100"
                     data-direction="left">

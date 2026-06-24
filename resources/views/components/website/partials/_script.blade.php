@@ -32,6 +32,7 @@
                     new Swiper(".pd-details-gallery", {
                         loop: true,
                         speed: 600,
+                        rtl: document.documentElement.getAttribute('dir') === 'rtl',
                         slidesPerView: 1,
                         spaceBetween: 0,
                         navigation: {

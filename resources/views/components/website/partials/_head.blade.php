@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="{{ Path::css('twentytwenty.min.css') }}">
 <link rel="stylesheet" href="{{ Path::css('swiper.min.css') }}">
 <link rel="stylesheet" href="{{ Path::css('main.css') }}">
+
 <!-- Toastr -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <link

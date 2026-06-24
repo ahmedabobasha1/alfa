@@ -21,9 +21,10 @@
                             </div>
                             <div class="request-item ">
                                 <span>{{ __('website.call_us') }}</span>
-                                @foreach ($phones as $phone)
+                                {{-- @foreach ($phones as $phone)
                                 <a href="tel:+{{ $phone->code . $phone->phone }}">{{ $phone->code . $phone->phone }}</a>
-                                @endforeach
+                                @endforeach --}}
+                                <a href="tel:+{{ $main_address->code . $main_address->phone }}">{{ $main_address->code . $main_address->phone }}</a>
                                 <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
                             </div>
                         </div>

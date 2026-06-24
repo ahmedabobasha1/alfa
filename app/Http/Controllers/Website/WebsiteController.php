@@ -291,8 +291,13 @@ class WebsiteController extends Controller
 
     public function previousProjects()
     {
-        
-        $data['previous_projects'] = Project::with('images')->active()->previous()->orderBy('order')->get();
+        $data['categories'] = Category::with([
+            'projects' => function ($query) {
+                $query->with('images')->active()->previous()->orderBy('order');
+            },
+        ])->whereHas('projects', function ($query) {
+            $query->active()->previous();
+        })->active()->orderBy('order')->get();
 
         return view('Website.previous-projects', $data);
     }

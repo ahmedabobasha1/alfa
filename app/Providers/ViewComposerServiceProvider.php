@@ -116,6 +116,15 @@ class ViewComposerServiceProvider extends ServiceProvider
             $previousProjects = Cache::remember('previous_projects', 60, function () {
                 return Project::with('images')->active()->previous()->orderBy('order')->take(4)->get();
             });
+            $previousProjectsCategories = Cache::remember('previous_projects_categories', 60, function () {
+                return Category::with([
+                    'projects' => function ($query) {
+                        $query->with('images')->active()->previous()->orderBy('order');
+                    },
+                ])->whereHas('projects', function ($query) {
+                    $query->active()->previous();
+                })->active()->orderBy('order')->get();
+            });
             // get call to action phone numbers
             $cta_phone_full = $settings['phone'] ?? ''; // e.g. +201061560915
             $cta_phone = ltrim($cta_phone_full, '+');
@@ -136,6 +145,7 @@ class ViewComposerServiceProvider extends ServiceProvider
                 'phones' => $phones,
                 'headerCategories' => $headerCategories,
                 'previousProjects' => $previousProjects,
+                'previousProjectsCategories' => $previousProjectsCategories,
                 'cta_phone_full' => $cta_phone_full,
                 'cta_phone' => $cta_phone,
                 'cta_whatsapp_full' => $cta_whatsapp_full,

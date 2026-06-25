@@ -379,9 +379,14 @@ ul {
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: center;
+    align-items: center ;
     align-items: baseline;
     flex-direction: column
+}
+.sub-contact{
+
+    align-items: center !important;
+
 }
 [dir="rtl"] .section-heading {
     margin-bottom: 60px;
@@ -12683,7 +12688,15 @@ background-color: #100801;
     font-family: var(--tl-ff-body);
     color: #9f9fa4
 }
-
+.contact-section{
+    .tl-primary-btn {
+   
+    color:black !important;
+        &:hover{
+             color:white !important;
+        }
+}
+}
 .request-form-wrap .tl-primary-btn {
     border: 1px solid hsla(0, 0%, 100%, .24)ك;
     color:white;

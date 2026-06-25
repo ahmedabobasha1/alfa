@@ -1,40 +1,76 @@
-<form action="{{ route('website.saveConatct') }}" method="post"  class="form-horizontal">
+<form action="{{ route('website.saveConatct') }}" method="post" class="form-horizontal">
     @csrf
-    <div class="form-group row">
-        <div class="col-md-6">
-            <div class="form-item">
-                <h4 class="form-title">{{ __('website.your_name') }} *</h4>
-                <input type="text" id="name" name="name" class="form-control"
-                    placeholder="{{ __('website.your_name') }}">
-                @error('name')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+    @if (($formVariant ?? '') === 'home')
+        <div class="form-group row">
+            <div class="col-md-6">
+                <div class="form-item">
+                    <h4 class="form-title">{{ __('website.your_name') }} *</h4>
+                    <input type="text" id="name" name="name" class="form-control"
+                        placeholder="{{ __('website.your_name') }}">
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-item">
+                    <h4 class="form-title">{{ __('website.email_address') }} *</h4>
+                    <input type="email" id="email" name="email" class="form-control"
+                        placeholder="{{ __('website.your_email') }}">
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-item">
-                <h4 class="form-title">{{ __('website.phone') }} *</h4>
-                <input type="text" id="phone" name="phone" class="form-control"
-                    placeholder="{{ __('website.your_phone') }}">
-                @error('phone')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+        <div class="form-group row">
+            <div class="col-md-12">
+                <div class="form-item">
+                    <h4 class="form-title">{{ __('website.phone') }} *</h4>
+                    <input type="text" id="phone" name="phone" class="form-control"
+                        placeholder="{{ __('website.your_phone') }}">
+                    @error('phone')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-md-6">
-            <div class="form-item">
-                <h4 class="form-title">{{ __('website.email_address') }} *</h4>
-                <input type="text" id="email" name="email" class="form-control"
-                    placeholder="{{ __('website.your_email') }}">
-                @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+    @else
+        <div class="form-group row">
+            <div class="col-md-6">
+                <div class="form-item">
+                    <h4 class="form-title">{{ __('website.your_name') }} *</h4>
+                    <input type="text" id="name" name="name" class="form-control"
+                        placeholder="{{ __('website.your_name') }}">
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-item">
+                    <h4 class="form-title">{{ __('website.phone') }} *</h4>
+                    <input type="text" id="phone" name="phone" class="form-control"
+                        placeholder="{{ __('website.your_phone') }}">
+                    @error('phone')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
         </div>
-
-    </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <div class="form-item">
+                    <h4 class="form-title">{{ __('website.email_address') }} *</h4>
+                    <input type="text" id="email" name="email" class="form-control"
+                        placeholder="{{ __('website.your_email') }}">
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="form-group row">
         <div class="col-md-12">
             <div class="form-item message-item">
@@ -48,7 +84,7 @@
         </div>
     </div>
     <div class="submit-btn">
-        <button id="submit" class="tl-primary-btn" type="submit">{{ __('website.send_message') }} <span
-                class="icon"><i class="fa-regular fa-arrow-right"></i></span></button>
+        <button id="submit" class="tl-primary-btn {{ $buttonClass ?? '' }}" type="submit">{{ __('website.send_message') }}
+            <span class="icon"><i class="fa-regular fa-arrow-right"></i></span></button>
     </div>
 </form>

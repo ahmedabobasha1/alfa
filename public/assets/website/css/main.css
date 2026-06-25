@@ -12685,7 +12685,8 @@ background-color: #100801;
 }
 
 .request-form-wrap .tl-primary-btn {
-    border: 1px solid hsla(0, 0%, 100%, .24)
+    border: 1px solid hsla(0, 0%, 100%, .24)ك;
+    color:white;
 }
 
 .hero-section-7 {

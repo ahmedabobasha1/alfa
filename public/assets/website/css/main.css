@@ -5213,16 +5213,7 @@ ul {
     z-index: -1
 }
 
-.antra-slider .slider-item .bg-img:before {
-background-color: #100801;
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: .4;
-}
+
 
 .slider-content-wrap {
     padding-top: 300px;

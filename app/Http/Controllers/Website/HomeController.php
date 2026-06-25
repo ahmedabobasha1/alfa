@@ -40,7 +40,8 @@ class HomeController extends Controller
         })->active()->get();
 
         $data['previous_projects_section'] = Section::type(SectionType::PREVIOUS_PROJECTS)->first();
-        $data['previous_projects'] = Project::with('images')->active()->home()->previous()->orderBy('order')->get();
+
+        $data['previous_projects'] = Project::with('images')->active()->home()->previous()->orderBy('order')->take(6)->get();
 
         $data['blogs_section'] = Section::type(SectionType::BLOGS)->first();
         $data['blogs'] = Blog::with('category')->active()->home()->orderBy('order')->take(3)->get();

@@ -23,14 +23,7 @@
          @include('Website.home-partials._blogs')
     @endif
 
-  
-
-  
-
-   
-
-
-    {{-- @include('Website.home-partials._contact-us') --}}
+    @include('Website.home-partials._contact-us')
 
 
 </x-website.layout>

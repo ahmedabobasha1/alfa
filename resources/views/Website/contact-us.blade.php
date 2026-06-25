@@ -26,13 +26,19 @@
                         <div class="contact-info-card__icon">
                             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         </div>
-                        <div class="contact-info-card__body">
-                            <span class="contact-info-card__label">{{ __('website.address') }}</span>
-                            <p class="contact-info-card__value">{{ $main_address->address }}</p>
-                            @if ($main_address->map_link)
-                                <a href="{{ $main_address->map_link }}" class="contact-info-card__link" target="_blank"
-                                    rel="noopener noreferrer">{{ __('website.view_on_map') }}</a>
-                            @endif
+                        <div class="request-item-wrap">
+                            <div class="request-item ">
+                                <span>{{ __('website.address') }}</span>
+                                <p>{{ $main_address->address }}</p>
+                            </div>
+                            <div class="request-item ">
+                                <span>{{ __('website.call_us') }}</span>
+                                {{-- @foreach ($phones as $phone)
+                                <a href="tel:+{{ $phone->code . $phone->phone }}">{{ $phone->code . $phone->phone }}</a>
+                                @endforeach --}}
+                                <a href="tel:+{{ $main_address->code . $main_address->phone }}">{{ $main_address->code . $main_address->phone }}</a>
+                                <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
+                            </div>
                         </div>
                     </div>
                 </div>

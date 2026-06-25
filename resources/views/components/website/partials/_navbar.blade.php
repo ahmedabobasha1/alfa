@@ -37,6 +37,9 @@
                                                     href="{{ route('website.projectDetails', $project->slug) }}">{{ $project->name }}</a>
                                             </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
                                             @endforeach
                                         </ul>
                                     </li>
@@ -58,12 +61,15 @@
                                                     href="{{ route('website.' . $menu->route_name) }}">{{ $menu->name }}</a>
     
                                             </li>
+<<<<<<< HEAD
                                         @endif
                                     @endforeach
                                  
                                 </ul>
                             </div>
 =======
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
                                         @endforeach
                                     </ul> 
                                 </li>
@@ -72,10 +78,17 @@
                                     <a
                                         href="{{ route('website.' . $menu->route_name) }}">{{ $menu->name }}</a>
                                     <ul>
-                                        @foreach ($previousProjects as $project)
+                                        @foreach ($previousProjectsCategories as $category)
                                         <li class="menu-item">
                                             <a
-                                                href="{{ route('website.projectDetails', $project->slug) }}">{{ $project->name }}</a>
+                                                href="{{ route('website.categoryDetails', $category) }}">{{ $category->name }}</a>
+                                            </li>
+                                            {{-- @foreach ($category->projects as $project)
+                                            <li class="menu-item">
+                                                <a
+                                                    href="{{ route('website.projectDetails', $project->slug) }}">{{ $project->name }}</a>
+                                            </li>
+                                            @endforeach --}}
                                         </li>
                                         @endforeach
                                     </ul>
@@ -102,6 +115,7 @@
                                 @endforeach
                              
                             </ul>
+<<<<<<< HEAD
 >>>>>>> master
                         </div>
                         <!-- /.header-menu-wrap -->
@@ -145,6 +159,11 @@
                                 </button>
                             </div>
 =======
+=======
+                        </div>
+                        <!-- /.header-menu-wrap -->
+                    </div>
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
                     <!-- /.header-menu-wrap -->
                 </div>
                 <div class="header-right-wrap">
@@ -164,7 +183,10 @@
                         </a>
                         <div class="header-btn-wrap">
                             <a href="{{ route('website.contact-us') }}" class="tl-primary-btn header-btn">{{ __('website.get_in_touch') }}</a>
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
                         </div>
                         <div class="header-mobile-extras ">
                             <a href="{{ $altLangLink }}" class="header-lang-switch header-lang-switch--mobile"
@@ -185,7 +207,10 @@
                         </div>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
                     <div class="header-mobile-extras ">
                         <a href="{{ $altLangLink }}" class="header-lang-switch header-lang-switch--mobile"
                             hreflang="{{ $targetLang }}" rel="alternate"
@@ -203,13 +228,17 @@
                             <span class="mobile-nav-trigger__bar" aria-hidden="true"></span>
                         </button>
                     </div>
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
                 </div>
                 <!-- /.primary-header-inner -->
     
             </div>
     
         </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     </header>
@@ -233,6 +262,8 @@
             <button type="button" class="mobile-side-menu-close" aria-label="Close menu"><i class="fa-regular fa-xmark"
                     aria-hidden="true"></i></button>
         </div>
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
         <div class="side-menu-wrap mobile-nav-mount" id="alfa-mobile-nav-mount"></div>
         <div class="side-menu-lang">
             <a href="{{ $altLangLink }}" class="header-lang-switch header-lang-switch--drawer" hreflang="{{ $targetLang }}"
@@ -245,6 +276,7 @@
         <div class="side-menu-contact">
             <div class="side-menu-header">
                 <h3>{{ __('website.contact_us') }}</h3>
+<<<<<<< HEAD
 >>>>>>> master
             </div>
             <div class="side-menu-wrap mobile-nav-mount" id="alfa-mobile-nav-mount"></div>
@@ -267,6 +299,8 @@
                         <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
                     </li>
                 </ul>
+=======
+>>>>>>> c1258abf9a36cd8c08a11a6bcb5c3b9d50e72078
             </div>
     
         </div>

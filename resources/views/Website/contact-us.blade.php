@@ -7,7 +7,7 @@
         <div class="container container-2">
 
             <div class="row request-wrap contact-page-area">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="request-content mb-5">
                         <div class="section-heading">
                             <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
@@ -21,9 +21,10 @@
                             </div>
                             <div class="request-item ">
                                 <span>{{ __('website.call_us') }}</span>
-                                @foreach ($phones as $phone)
+                                {{-- @foreach ($phones as $phone)
                                 <a href="tel:+{{ $phone->code . $phone->phone }}">{{ $phone->code . $phone->phone }}</a>
-                                @endforeach
+                                @endforeach --}}
+                                <a href="tel:+{{ $main_address->code . $main_address->phone }}">{{ $main_address->code . $main_address->phone }}</a>
                                 <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
                             </div>
                         </div>

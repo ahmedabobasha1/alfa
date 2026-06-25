@@ -486,7 +486,7 @@ align-items:start;
 }
 
 .section-heading .section-title.title-2 {
-    font-size: 60px
+    font-size: 40px;
 }
 
 @media(max-width: 1199px) {

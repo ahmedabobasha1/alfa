@@ -9,8 +9,8 @@
 
             <div class="row align-items-end justify-content-center text-center contact-section__header g-4 mb-5">
                 <div class="col-lg-7">
-                    <div class="section-heading mb-0">
-                        <h4 class="sub-heading d-flex justify-content-center " data-text-animation="fade-in-right" data-split="char"
+                    <div class="section-heading sub-contact mb-0">
+                        <h4 class="sub-heading " data-text-animation="fade-in-right" data-split="char"
                             data-duration="0.9" data-stagger="0.03">{{ __('website.contact_us') }}</h4>
                             <div class="section-heading section-heading-2 mb-0">
                         <h2 class="section-title cursor-effect title-2 lh-md">{{ $contact_us_page->title }}</h2>

@@ -50,4 +50,27 @@ class GalleryVideo extends Model
     {
         return $query->where('status', 1);
     }
+
+    public function getEmbedUrlAttribute(): ?string
+    {
+        $url = trim((string) ($this->attributes['video_url'] ?? ''));
+
+        if ($url === '') {
+            return null;
+        }
+
+        if (str_contains($url, 'youtube.com/embed/') || str_contains($url, 'youtube-nocookie.com/embed/')) {
+            return $url;
+        }
+
+        if (preg_match('/youtu\.be\/([^\?&\/]+)/', $url, $matches)) {
+            return 'https://www.youtube.com/embed/'.$matches[1];
+        }
+
+        if (preg_match('/[?&]v=([^&]+)/', $url, $matches)) {
+            return 'https://www.youtube.com/embed/'.$matches[1];
+        }
+
+        return $url;
+    }
 }

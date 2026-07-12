@@ -18,6 +18,8 @@
     @if (isset($previous_projects_section) && $previous_projects->isNotEmpty())
         @include('Website.home-partials._previous-projects')
     @endif
+    
+        @include('Website.home-partials._video-section')
 
     @if ($blogs->isNotEmpty())
          @include('Website.home-partials._blogs')

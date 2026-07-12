@@ -1585,7 +1585,41 @@ if (!isRtl) {
         }
 
         scrollTopPercentage();
+        initHomeVideoAutoplay();
     });
+
+    function initHomeVideoAutoplay() {
+        document.querySelectorAll(".home-video-section__iframe[data-src]").forEach(function (iframe) {
+            var section = iframe.closest(".home-video-section");
+            if (!section || section.dataset.videoLoaded === "true") {
+                return;
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting || iframe.src) {
+                        return;
+                    }
+
+                    var src = iframe.getAttribute("data-src");
+                    if (!src) {
+                        return;
+                    }
+
+                    var joiner = src.indexOf("?") > -1 ? "&" : "?";
+                    iframe.src = src + joiner + "autoplay=1&mute=1&rel=0";
+                    iframe.removeAttribute("data-src");
+                    section.dataset.videoLoaded = "true";
+                    observer.unobserve(section);
+                });
+            }, {
+                threshold: 0.4,
+                rootMargin: "0px 0px -5% 0px"
+            });
+
+            observer.observe(section);
+        });
+    }
 
     document.querySelectorAll(".scroll-btn").forEach((btn, index) => {
         btn.addEventListener("click", () => {

@@ -8,6 +8,7 @@ use App\Models\AboutUs;
 use App\Models\Album;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\GalleryVideo;
 use App\Models\Partener;
 use App\Models\Phone;
 use App\Models\Project;
